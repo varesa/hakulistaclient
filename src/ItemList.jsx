@@ -43,14 +43,18 @@ var ItemList = React.createClass({
     },
 
     onUnselectHandler(ev) {
-        var sel_id = ev.target.attributes['value'].value; // <a>.value doesn't exist
+        var sel_id = parseInt(ev.target.attributes['value'].value); // <a>.value doesn't exist
         var tmp = this.state;
-        tmp.selected.splice(tmp.selected.indexOf(sel_id));
+        tmp.selected.splice(tmp.selected.indexOf(sel_id), 1);
         this.setState(tmp);
     },
 
     isSelected(item) {
         return this.state.selected.indexOf(item.data.id) > -1
+    },
+
+    ignoreFocus() {
+        return false;
     },
     
     render: function () {
@@ -59,7 +63,6 @@ var ItemList = React.createClass({
         return (
             <div>
                 <ItemSearch onUpdate={this.updateSearch} catid={this.props.catid} />
-                <!-- Unselected -->
                 <div style={{float: "left", width: "450px"}}>
                     <select multiple="yes" style={{width: "450px", height: "500px"}} onChange={itemList.onSelectHandler}>
                     {
@@ -74,13 +77,12 @@ var ItemList = React.createClass({
                     }
                     </select>
                 </div>
-                <!-- Selected -->
-                <div style={{float: "left", width: "100px", marginLeft: "20px"}}>
+                <div style={{float: "left", width: "400px", marginLeft: "20px"}}>
                     {
                         state.items.map(function(item) {
                             if(itemList.isSelected(item)) {
-                                return <Item key={item.data.id} value={item.data.id} itemid={item.data.id} selected={true}
-                                             onUnselectHandler={itemList.onUnselectHandler} />;
+                                return <Item key={item.data.id} value={item.data.id} itemid={item.data.id} selected={true} edit={itemList.props.edit}
+                                             onUnselectHandler={itemList.onUnselectHandler} catname={itemList.props.catname} />;
                             } else {
                                 return null;
                             }

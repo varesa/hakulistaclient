@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {getCategories} from './Api';
+
 var NewCategory = React.createClass({
     getInitialState() {
         return { value: "" };
@@ -10,13 +12,14 @@ var NewCategory = React.createClass({
         this.setState(tmp);
     },
     create() {
-        $.post("http://127.0.0.1:5000/categories/", {
-            name: this.state.value
-        });
+        $.post("http://127.0.0.1:5000/categories/",
+            { name: this.state.value },
+            function () { getCategories(); }
+        );
+
         var tmp = this.state;
         tmp.value = "";
         this.setState(tmp);
-        document.dispatchEvent(new Event("CAT_UPDATED"));
     },
    render() {
        return (
