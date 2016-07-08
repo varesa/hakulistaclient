@@ -1,7 +1,8 @@
 import store from './Store';
 import {getCategory} from './Store';
 
-const server = "http://127.0.0.1:5000";
+//const server = "http://127.0.0.1:5000";
+const server = "http://vtiger.intra.alrekry.fi:5000";
 
 function getCategories() {
     console.log("Updating");
@@ -40,7 +41,7 @@ function deleteCategory(catid){
 function moveCategoryUp(catid) {
     var category = getCategory(catid);
     $.ajax({
-        url: "http://127.0.0.1:5000/categories/" + category.data.id,
+        url: server + "/categories/" + category.data.id,
         data: {order: category.data.order - 1},
         method: "PUT",
         success: function (response) {
@@ -52,7 +53,7 @@ function moveCategoryUp(catid) {
 function moveCategoryDown(catid) {
     var category = getCategory(catid);
     $.ajax({
-        url: "http://127.0.0.1:5000/categories/" + category.data.id,
+        url: server + "/categories/" + category.data.id,
         data: {order: category.data.order + 1},
         method: "PUT",
         success: function (response) {

@@ -1,5 +1,7 @@
 import React from 'react';
 
+const server = "http://vtiger.intra.alrekry.fi:5000";
+
 var ItemSearch = React.createClass({
     getInitialState() {
         return {
@@ -7,7 +9,7 @@ var ItemSearch = React.createClass({
         }
     },
     create() {
-        $.post("http://127.0.0.1:5000/categories/" + this.props.catid + "/items/", {
+        $.post(server + "/categories/" + this.props.catid + "/items/", {
             name: this.state.value
         });
         document.dispatchEvent(new Event("ITEM_UPDATED"));

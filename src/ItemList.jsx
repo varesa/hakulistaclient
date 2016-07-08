@@ -3,11 +3,13 @@ import React from 'react';
 import ItemSearch from './ItemSearch.jsx';
 import Item from './Item.jsx';
 
+const server = "http://vtiger.intra.alrekry.fi:5000";
+
 var ItemList = React.createClass({
 
     getItems() {
         var itemList = this;
-        $.get("http://127.0.0.1:5000/categories/" + this.props.catid + "/items", function (response) {
+        $.get(server + "/categories/" + this.props.catid + "/items", function (response) {
             var tmp = itemList.state;
             tmp.items = response.data.items;
             itemList.setState(tmp);

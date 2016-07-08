@@ -2,6 +2,8 @@ import React from 'react';
 
 import {getCategories} from './Api';
 
+const server = "http://vtiger.intra.alrekry.fi:5000";
+
 var NewCategory = React.createClass({
     getInitialState() {
         return { value: "" };
@@ -12,7 +14,7 @@ var NewCategory = React.createClass({
         this.setState(tmp);
     },
     create() {
-        $.post("http://127.0.0.1:5000/categories/",
+        $.post(server + "/categories/",
             { name: this.state.value },
             function () { getCategories(); }
         );

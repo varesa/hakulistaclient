@@ -1,9 +1,11 @@
 import React from 'react';
 
+const server = "http://vtiger.intra.alrekry.fi:5000";
+
 var Item = React.createClass({
     getInitialState: function() {
         var item = this;
-        $.get("http://127.0.0.1:5000/categories/0/items/" + this.props.itemid, function (response) {
+        $.get(server + "/categories/0/items/" + this.props.itemid, function (response) {
             var tmp = item.state;
             tmp.item = response.data;
             item.setState(tmp);
@@ -17,7 +19,7 @@ var Item = React.createClass({
     },
     deleteHandler() {
         $.ajax({
-            url: "http://127.0.0.1:5000/categories/999/items/" + this.props.itemid,
+            url: server + "/categories/999/items/" + this.props.itemid,
             method: "DELETE",
             success: function(response) {
                 document.dispatchEvent(new Event("ITEM_UPDATED"));
