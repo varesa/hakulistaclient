@@ -23387,7 +23387,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	//const server = "http://127.0.0.1:5000";
-	var server = "http://vtiger.intra.alrekry.fi:5000";
+	var server = "https://vtiger.intra.alrekry.fi:5000";
 	
 	function getCategories() {
 	    console.log("Updating");
@@ -23601,7 +23601,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var server = "http://vtiger.intra.alrekry.fi:5000";
+	var server = "https://vtiger.intra.alrekry.fi:5000";
 	
 	var ItemList = _react2.default.createClass({
 	    displayName: 'ItemList',
@@ -23714,7 +23714,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var server = "http://vtiger.intra.alrekry.fi:5000";
+	var server = "https://vtiger.intra.alrekry.fi:5000";
 	
 	var ItemSearch = _react2.default.createClass({
 	    displayName: "ItemSearch",
@@ -23769,7 +23769,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var server = "http://vtiger.intra.alrekry.fi:5000";
+	var server = "https://vtiger.intra.alrekry.fi:5000";
 	
 	var Item = _react2.default.createClass({
 	    displayName: "Item",
@@ -23860,7 +23860,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var server = "http://vtiger.intra.alrekry.fi:5000";
+	var server = "https://vtiger.intra.alrekry.fi:5000";
 	
 	var NewCategory = _react2.default.createClass({
 	    displayName: 'NewCategory',

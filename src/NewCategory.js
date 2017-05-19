@@ -2,7 +2,7 @@ import React from 'react';
 
 import {getCategories} from './Api';
 
-const server = "http://vtiger.intra.alrekry.fi:5000";
+const server = "https://vtiger.intra.alrekry.fi:5000";
 
 var NewCategory = React.createClass({
     getInitialState() {
