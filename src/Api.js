@@ -2,7 +2,7 @@ import store from './Store';
 import {getCategory} from './Store';
 
 //const server = "http://127.0.0.1:5000";
-const server = "https://vtiger.intra.alrekry.fi:5000";
+const server = "https://vtiger.intra.alrekry.fi:8443";
 
 function getCategories() {
     console.log("Updating");

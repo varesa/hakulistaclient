@@ -1,6 +1,6 @@
 import React from 'react';
 
-const server = "https://vtiger.intra.alrekry.fi:5000";
+const server = "https://vtiger.intra.alrekry.fi:8443";
 
 var ItemSearch = React.createClass({
     getInitialState() {

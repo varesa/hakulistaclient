@@ -3,7 +3,7 @@ import React from 'react';
 import ItemSearch from './ItemSearch.jsx';
 import Item from './Item.jsx';
 
-const server = "https://vtiger.intra.alrekry.fi:5000";
+const server = "https://vtiger.intra.alrekry.fi:8443";
 
 var ItemList = React.createClass({
 
